@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<div>
+		<h1 id="pricez">Price</h1>
+	</div>
+
+<script>
+
+$.getJSON( "https://api.coindesk.com/v1/bpi/currentprice.json", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+
+let butter = $.getJSON( "https://api.coindesk.com/v1/bpi/currentprice.json");
+
+
+$.getJSON("https://api.coindesk.com/v1/bpi/currentprice.json", {data: "value"}, function(json) {
+  let foo = data.bpi;
+  console.log(foo);
+});
+
+
+
+});
+
+</script>
+
+
+
+</body>
+</html>
