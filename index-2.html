@@ -31,7 +31,7 @@ let butter = $.getJSON( "https://api.coindesk.com/v1/bpi/currentprice.json");
 
 $.getJSON("https://api.coindesk.com/v1/bpi/currentprice.json", {data: "value"}, function(json) {
   let foo = data.bpi;
-  console.log(foo);
+  console.log(foo.USD.rate);
 });
 
 
