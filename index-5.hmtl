@@ -14,6 +14,7 @@
 		- Hobbies
 
 <p id="demo"></p> 
+<p id="dem"></p> 
 
 <script>
 
@@ -30,7 +31,7 @@ class Application extends React.Component {
   callApi(){
     // Github fetch library : https://github.com/github/fetch
     // Call the API page
-    fetch('https://www.reddit.com/r/reactjs.json')
+    fetch('https://blockchain.info/ticker')
     .then((result) => {
       // Get the result
       // If we want text, call result.text()
@@ -38,14 +39,19 @@ class Application extends React.Component {
     }).then((jsonResult) => {
       // Do something with the result
       console.log(jsonResult);
+      let usd = jsonResult.USD
+      console.log(usd);
+      usd = JSON.stringify(usd);
+      let rake = document.getElementById('dem');
+      rake.innerHTML = usd;
     })
   }
   
   render() {
     return <div>
-      <button onClick={() => this.callApi()}>
-        Click here to call API
-      </button>
+      <p >
+        {this.callApi()}
+      </p>
     </div>;
   }
 }
@@ -54,7 +60,6 @@ class Application extends React.Component {
     <Application />,
     document.getElementById('root')
   );
-
 
 	</script>
 
