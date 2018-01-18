@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  <title></title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 </head>
 <body>
 
-	<div>
-		<h1 id="pricez">Price</h1>
-	</div>
+  <div id="root"></div>
+  - App
+    - Profile 
+    - Hobbies
+
+<p id="demo"></p> 
+
+  <h2>USD</h2>
+  <p id="usd-info"></p>
+  <h2>EUR</h2>
+  <p id="eur-info"></p>
+  <h2>SEK</h2>
+  <p id="sek-info"></p>
+  <h2>GBP</h2>
+  <p id="gbp-info"></p>
+  <h2>AUD</h2>
+  <p id="aud-info"></p>
+  <h2>JPY</h2>
+  <p id="jpy-info"></p>     
+  <h2>CNY</h2>
+  <p id="cny-info"></p> 
 
 <script>
 
-$.getJSON( "https://api.coindesk.com/v1/bpi/currentprice.json", function( data ) {
-  var items = [];
-  $.each( data, function( key, val ) {
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
-  });
- 
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
 
-let butter = $.getJSON( "https://api.coindesk.com/v1/bpi/currentprice.json");
-
-
-$.getJSON("https://api.coindesk.com/v1/bpi/currentprice.json", {data: "value"}, function(json) {
-  let foo = data.bpi;
-  console.log(foo.USD.rate);
-});
-
-
-
-});
-
+  // var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+  // document.getElementById("demo").innerHTML = obj.name + ", " + obj.age; 
 </script>
 
+  <script type="text/babel">
+$(document).ready(function() {
 
+
+
+    let DATA = {
+    name: 'John Smith',
+    email: 'jsmith@gmail.com'
+    }
+
+
+  class App extends React.Component{
+    render(){
+      return (
+      <div>
+        <Profile 
+        name={this.props.profileData.name}
+        email={this.props.profileData.email}
+        />
+      </div>);
+    }
+  }
+
+  class Profile extends React.Component{
+    render(){
+      return (
+      <div>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.email}</p>
+      </div>);
+    }
+  }
+
+
+
+  ReactDOM.render(
+    <App profileData={DATA} />,
+    document.getElementById('root')
+  );
+
+});  
+  </script>
 
 </body>
 </html>
