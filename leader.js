@@ -31,7 +31,15 @@ class Application extends React.Component {
       console.log(jpyPrice)
       let cnyPrice = selectCNY.last
 
-
+      // Selects the symbol
+      let usdSymbol = selectUSD.symbol
+      let eurSymbol = selectEUR.symbol
+      let sekSymbol = selectSEK.symbol
+      let gbpSymbol = selectGBP.symbol
+      let audSymbol = selectAUD.symbol
+      let jpySymbol = selectJPY.symbol
+      console.log(jpySymbol)
+      let cnySymbol = selectCNY.symbol
 
       // Stringify json to get it to be able to be put on screen
       usdPrice = JSON.stringify(usdPrice);
@@ -60,26 +68,29 @@ class Application extends React.Component {
       document.getElementById("jpy-btn").addEventListener("click", jpyFunction);
       document.getElementById("cny-btn").addEventListener("click", cnyFunction);
 
+      document.getElementById("cur-main").innerHTML = usdSymbol + " " + usdPrice;
       function usdFunction() {
-          document.getElementById("cur-main").innerHTML = usdPrice;
+          document.getElementById("cur-main").innerHTML = usdSymbol + " " + usdPrice;
       } 
       function eurFunction() {
-          document.getElementById("cur-main").innerHTML = eurPrice;
+          document.getElementById("cur-main").innerHTML = eurSymbol + " " + eurPrice;
       }
       function sekFunction() {
-          document.getElementById("cur-main").innerHTML = sekPrice;
+          document.getElementById("cur-main").innerHTML = sekSymbol + " "  + sekPrice;
       } 
       function gbpFunction() {
-          document.getElementById("cur-main").innerHTML = gbpPrice;
+          document.getElementById("cur-main").innerHTML = gbpSymbol + " "  + gbpPrice;
       } 
       function audFunction() {
-          document.getElementById("cur-main").innerHTML = audPrice;
+          document.getElementById("cur-main").innerHTML = audSymbol + " "  + audPrice;
       } 
       function jpyFunction() {
-          document.getElementById("cur-main").innerHTML = jpyPrice;
+          document.getElementById("cur-main").innerHTML = jpySymbol + " "  + jpyPrice;
       }  
       function cnyFunction() {
-          document.getElementById("cur-main").innerHTML = cnyPrice;
+          document.getElementById("cur-main").innerHTML = cnySymbol + " "  + cnyPrice;
+          document.getElementById("main-cont").className = ('cny-bg'); 
+          
       }                               
 
     })
@@ -104,3 +115,8 @@ class Application extends React.Component {
     <Application />,
     document.getElementById('run-app')
   );
+
+
+
+
+

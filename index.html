@@ -5,31 +5,37 @@
 	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  
 </head>
 <body>
 
 <!-- runs app -->
-<div id="run-app"></div>
 
-<p id="demo">dd</p> 
-<p id="usd-cont"></p> 
-<div style="background-color: teal;">
-  <h1 style="text-align: center;">Current price of Bitcoin:</h1>
-  <p id="cur-main" style="text-align: center;">$11,203</p>
-  <div>
-    <ul style="padding:0;text-align: center;">
-      <li id="usd-btn" class="cur-select"><a>USD</a></li>
-      <li id="eur-btn" class="cur-select"><a>EUR</a></li>
-      <li id="sek-btn" class="cur-select"><a>SEK</a></li>
-      <li id="gbp-btn" class="cur-select"><a>GBP</a></li>
-      <li id="aud-btn" class="cur-select"><a>AUD</a></li>
-      <li id="jpy-btn" class="cur-select"><a>JPY</a></li>
-      <li id="cny-btn" class="cur-select"><a>CNY</a></li>
-    </ul>
+
+
+<div class="bg-cont" >
+  <div id="main-cont" class="main-bg">
+    <div id="inner-cont">
+      <h1 style="text-align: center;">Current price of Bitcoin:</h1>
+      <p id="cur-main" style="text-align: center;"></p>
+      <div>
+        <ul style="padding:0;text-align: center;">
+          <li id="usd-btn" class="cur-select"><a>USD</a></li>
+          <li id="eur-btn" class="cur-select"><a>EUR</a></li>
+          <li id="sek-btn" class="cur-select"><a>SEK</a></li>
+          <li id="gbp-btn" class="cur-select"><a>GBP</a></li>
+          <li id="aud-btn" class="cur-select"><a>AUD</a></li>
+          <li id="jpy-btn" class="cur-select"><a>JPY</a></li>
+          <li id="cny-btn" class="cur-select"><a>CNY</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-
+<div id="run-app"></div>
 
 
 <script>

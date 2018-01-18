@@ -1,7 +1,93 @@
+h1, p, a {
+  font-family: 'Roboto Condensed', sans-serif; }
+
+.bg-cont {
+  text-align: center;
+  margin-top: 200px; }
+
+#main-cont {
+  margin: 0 auto;
+  width: 50%;
+  padding: 50px 0; }
+
+#inner-cont {
+  background-color: rgba(242, 242, 242, 0.8);
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0; }
+  #inner-cont h1 {
+    color: #383838; }
+
+#main-cont h1 {
+  margin: 0; }
+
+#cur-main {
+  font-size: 2rem;
+  margin: 10px;
+  color: #383838; }
+
 .cur-select {
   list-style-type: none;
-  background-color: #f2f2f2;
+  background-color: #fff;
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px; }
+
+#usd-btn,
+#eur-btn,
+#sek-btn,
+#gbp-btn,
+#aud-btn,
+#jpy-btn,
+#cny-btn {
+  border-top: 2px solid transparent;
+  background-color: #fff;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease; }
+
+#usd-btn:hover {
+  border-top: 2px solid red;
+  border-bottom: 2px solid blue;
+  transition: all 0.5s ease; }
+
+#eur-btn:hover {
+  border-top: 2px solid #FFCE00;
+  border-bottom: 2px solid #181E9B;
+  transition: all 0.5s ease; }
+
+#sek-btn:hover {
+  border-top: 2px solid #0067AB;
+  border-bottom: 2px solid #FFD000;
+  transition: all 0.5s ease; }
+
+#gbp-btn:hover {
+  border-top: 2px solid red;
+  border-bottom: 2px solid blue;
+  transition: all 0.5s ease; }
+
+#aud-btn:hover {
+  border-top: 2px solid blue;
+  border-bottom: 2px solid red;
+  transition: all 0.5s ease; }
+
+#jpy-btn:hover {
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  transition: all 0.5s ease; }
+
+#cny-btn:hover {
+  border-top: 2px solid #F10000;
+  border-bottom: 2px solid #FFE400;
+  transition: all 0.5s ease; }
+
+.main-bg {
+  background-image: url("../Dots.gif"); }
+
+.cny-bg {
+  margin: 0 auto;
+  width: 50%;
+  padding: 50px 0;
+  background-image: url("../cny.gif"); }
 
 /*# sourceMappingURL=main.css.map */
