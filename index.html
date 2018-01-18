@@ -8,12 +8,16 @@
 </head>
 <body>
 
-	<div id="root"></div>
-	- App
-		- Profile 
-		- Hobbies
+<!-- runs app -->
+<div id="run-app"></div>
 
-<p id="demo"></p> 
+
+<p id="usd-cont"></p> 
+<div style="background-color: teal;">
+  <h1 style="text-align: center;">Current price of Bitcoin:</h1>
+</div>
+
+
 
 <script>
 
@@ -22,46 +26,9 @@
 	// document.getElementById("demo").innerHTML = obj.name + ", " + obj.age; 
 </script>
 
-	<script type="text/babel">
+<p id="layout-content"></p> 
 
-
-
-
-		let DATA = {
-		name: 'John Smith',
-		email: 'jsmith@gmail.com'
-		}
-
-
-	class App extends React.Component{
-		render(){
-			return (
-			<div>
-				<Profile 
-				name={this.props.profileData.name}
-				email={this.props.profileData.email}
-				/>
-			</div>);
-		}
-	}
-
-	class Profile extends React.Component{
-		render(){
-			return (
-			<div>
-				<h3>{this.props.name}</h3>
-				<p>{this.props.email}</p>
-			</div>);
-		}
-	}
-
-
-
-	ReactDOM.render(
-	  <App profileData={DATA} />,
-	  document.getElementById('root')
-	);
-	</script>
+	<script type="text/babel" src="leader.js"></script>
 
 </body>
 </html>

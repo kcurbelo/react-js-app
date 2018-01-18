@@ -2,78 +2,65 @@
 <html>
 <head>
 	<title></title>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
 	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 </head>
 <body>
 
-	<!-- html stufffffzzzzz -->
-	<div>
-		<h1 id="pricez">Price</h1>
-	</div>
 	<div id="root"></div>
 	- App
 		- Profile 
 		- Hobbies
 
-	<p id="demo"></p> 
+<p id="demo"></p> 
+<p id="usd-cont"></p> 
 
-	<!-- Scripts -->
-	<script>
+<script>
 
-	</script>
+
+	// var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+	// document.getElementById("demo").innerHTML = obj.name + ", " + obj.age; 
+</script>
+
+<p id="layout-content"></p> 
+
 	<script type="text/babel">
-$(document).ready(function() {
 
+class Application extends React.Component {
+  callApi(){
+    // Github fetch library : https://github.com/github/fetch
+    // Call the API page
+    fetch('https://blockchain.info/ticker')
+    .then((result) => {
+      // Get the result
+      // If we want text, call result.text()
+      return result.json();
+    }).then((jsonResult) => {
+      // Do something with the result
+      console.log(jsonResult);
+      let usd = jsonResult.USD
+      usd = JSON.stringify(usd);
+      let usdText = document.getElementById('usd-cont');
+      usdText.innerHTML = usd;
+    })
+  }
+  
+  render() {
+    return <div>
+      <p >
+        {this.callApi()}
+      </p>
+    </div>;
+  }
+}
 
-		let rust =  $.get('https://blockchain.info/ticker', function(data) {
-		        // $("#data").text(data);
-		        console.log(data.USD);
-		    });
-		
+  ReactDOM.render(
+    <Application />,
+    document.getElementById('root')
+  );
 
-
-
-		let DATA = {
-		name: 'John Smith'
-		}
-
-
-	class App extends React.Component{
-		render(){
-			return (
-			<div>
-				<Profile 
-				name={this.props.profileData.name}
-				/>
-			</div>);
-		}
-	}
-
-	class Profile extends React.Component{
-		render(){
-			return (
-			<div>
-				<h3>{this.props.name}</h3>
-			</div>);
-		}
-	}
-
-
-
-	ReactDOM.render(
-	  <App profileData={DATA} />,
-	  document.getElementById('root')
-	);
-
-});	
 	</script>
-
 
 </body>
 </html>
