@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script> 	
+</head>
+<body>
+
+	<h2>USD</h2>
+	<p id="usd-info"></p>
+	<h2>EUR</h2>
+	<p id="eur-info"></p>
+	<h2>SEK</h2>
+	<p id="sek-info"></p>
+	<h2>GBP</h2>
+	<p id="gbp-info"></p>
+	<h2>AUD</h2>
+	<p id="aud-info"></p>
+	<h2>JPY</h2>
+	<p id="jpy-info"></p>			
+	<h2>CNY</h2>
+	<p id="cny-info"></p>	
+
+
+
+<script type="text/babel">
+$(document).ready(function() {
+    
+    $.get('https://blockchain.info/ticker', function(data) {
+        let usd = data.USD
+        let eur = data.EUR
+        let sek = data.SEK
+        let gbp = data.GBP
+        let aud = data.AUD
+        let jpy = data.JPY
+        let cny = data.CNY
+
+        usd = JSON.stringify(usd);
+        eur = JSON.stringify(eur);
+        sek = JSON.stringify(sek);
+        gbp = JSON.stringify(gbp);
+        aud = JSON.stringify(aud);
+        jpy = JSON.stringify(jpy);
+        cny = JSON.stringify(cny);
+
+        $("#usd-info").html(usd);
+        $("#eur-info").html(eur);
+        $("#sek-info").html(sek);
+        $("#gbp-info").html(gbp);
+        $("#aud-info").html(aud);
+        $("#jpy-info").html(jpy);
+        $("#cny-info").html(cny);
+
+    });
+
+
+});
+	</script>
+</body>
+</html>
