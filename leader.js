@@ -50,14 +50,6 @@ class Application extends React.Component {
       jpyPrice = JSON.stringify(jpyPrice);
       console.log(jpyPrice)
       cnyPrice = JSON.stringify(cnyPrice);      
-
-
-
-      // Set variable to element
-      // let usdText = document.getElementById('usd-cont');
-
-      // Change inner html
-      // usdText.innerHTML = usd;
       
       // Run function to change innerhtml
       document.getElementById("usd-btn").addEventListener("click", usdFunction);
@@ -90,12 +82,8 @@ class Application extends React.Component {
       function cnyFunction() {
           document.getElementById("cur-main").innerHTML = cnySymbol + " "  + cnyPrice;
       }                               
-
     })
   }
-
-
-
 
   render() {
     return <div>
@@ -104,15 +92,15 @@ class Application extends React.Component {
       </p>
     </div>;
   }
+
 }
 
 
 
-
-  ReactDOM.render(
-    <Application />,
-    document.getElementById('run-app')
-  );
+ReactDOM.render(
+  <Application />,
+  document.getElementById('run-app')
+);
 
 
 

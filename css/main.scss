@@ -1,28 +1,48 @@
+@import '../queriez';
+
 h1, p, a {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+.box-s {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 .bg-cont {
-	text-align:center;
-	margin-top: 200px;
-	// background-color:red;
+	margin-top: 50px;
+	@include screen(med) {
+		text-align:center;
+		margin-top: 200px;
+	}
 }
 #main-cont {
 	margin:0 auto;
-	width:50%;
+	width:90%;
 	padding:.5% 0;
+	h1 {
+		margin:0;
+	}
+	@include screen(med) {
+		width:50%;
+	}	
 }
 #inner-cont {
 	background-color: rgba(242, 242, 242, .9);
 	width: 98%;
 	margin: 0 auto; 
-	padding: 20px 0;
+	padding: 20px 20px;
+	@extend .box-s;
+
 	h1 {
 		color: #383838;
 	}
-}
-#main-cont h1 {
-	margin:0;
+	@include screen(med) {
+		display:inline-block;
+		margin-bottom:0px;
+		padding: 20px 20px;
+	}	
 }
 #cur-main {
 	font-size:2rem;
@@ -35,10 +55,17 @@ h1, p, a {
 .cur-select {
 	list-style-type: none; 
 	background-color: #fff;
-	display: inline-block;
+	display: block;
 	cursor:pointer;
-	padding:10px 20px;
+	padding:10px 0px;
 	border-radius:5px;
+	margin:0 auto;
+	margin-bottom:10px;
+	@include screen(med) {
+		display:inline-block;
+		margin-bottom:0px;
+		padding:10px 20px;
+	}	
 }
 
 // Button styles
