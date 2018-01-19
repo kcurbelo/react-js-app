@@ -89,8 +89,6 @@ class Application extends React.Component {
       }  
       function cnyFunction() {
           document.getElementById("cur-main").innerHTML = cnySymbol + " "  + cnyPrice;
-          document.getElementById("main-cont").className = ('cny-bg'); 
-          
       }                               
 
     })
