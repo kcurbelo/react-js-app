@@ -1,74 +1,22 @@
+// ===========================================
+// Mixins
+// ===========================================
 @import '../queriez';
 
+
+
+// ===========================================
+// Tag style
+// ===========================================
 h1, p, a {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
-.box-s {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
 
-.bg-cont {
-	margin-top: 50px;
-	@include screen(med) {
-		text-align:center;
-		margin-top: 200px;
-	}
-}
-#main-cont {
-	margin:0 auto;
-	width:90%;
-	padding:.5% 0;
-	h1 {
-		margin:0;
-	}
-	@include screen(med) {
-		width:50%;
-	}	
-}
-#inner-cont {
-	background-color: rgba(242, 242, 242, .9);
-	width: 98%;
-	margin: 0 auto; 
-	padding: 20px 20px;
-	@extend .box-s;
 
-	h1 {
-		color: #383838;
-	}
-	@include screen(med) {
-		display:inline-block;
-		margin-bottom:0px;
-		padding: 20px 20px;
-	}	
-}
-#cur-main {
-	font-size:2rem;
-	margin:10px;
-	color:#383838;
-}
-#cur-main:focus {
-	outline:none;
-}
-.cur-select {
-	list-style-type: none; 
-	background-color: #fff;
-	display: block;
-	cursor:pointer;
-	padding:10px 0px;
-	border-radius:5px;
-	margin:0 auto;
-	margin-bottom:10px;
-	@include screen(med) {
-		display:inline-block;
-		margin-bottom:0px;
-		padding:10px 20px;
-	}	
-}
-
-// Button styles
+// ===========================================
+// Buttons
+// ===========================================
 #usd-btn,
 #eur-btn,
 #sek-btn,
@@ -117,9 +65,77 @@ h1, p, a {
 	transition: all 0.5s ease;
 }
 
+
+
+// ===========================================
+// General
+// ===========================================
 .main-bg {
 	background-image: url("../Dots.gif");
 }
+#main-cont {
+	margin:0 auto;
+	width:90%;
+	padding:.5% 0;
+	h1 {
+		margin:0;
+	}
+	@include screen(med) {
+		width:50%;
+	}	
+}
+#inner-cont {
+	background-color: rgba(242, 242, 242, .9);
+	width: 98%;
+	margin: 0 auto; 
+	padding: 20px 20px;
+	@extend .box-s;
+
+	h1 {
+		color: #383838;
+	}
+	@include screen(med) {
+		display:inline-block;
+		margin-bottom:0px;
+		padding: 20px 20px;
+	}	
+}
+.box-s {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bg-cont {
+	margin-top: 50px;
+	@include screen(med) {
+		text-align:center;
+		margin-top: 200px;
+	}
+}
+#cur-main {
+	font-size:2rem;
+	margin:10px;
+	color:#383838;
+}
+#cur-main:focus {
+	outline:none;
+}
+.cur-select {
+	list-style-type: none; 
+	background-color: #fff;
+	display: block;
+	cursor:pointer;
+	padding:10px 0px;
+	border-radius:5px;
+	margin:0 auto;
+	margin-bottom:10px;
+	@include screen(med) {
+		display:inline-block;
+		margin-bottom:0px;
+		padding:10px 20px;
+	}	
+}
+
 
 
 
